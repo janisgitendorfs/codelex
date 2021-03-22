@@ -1,29 +1,13 @@
 <?php
 
-require_once 'vendor/autoload.php';
+interface Animal {}
 
-use App\Shop;
-use App\Suppliers\AmazingGardenSupplier;
-use App\Suppliers\CoolGardenSupplier;
-use App\Suppliers\HeheSupplier;
-use App\Suppliers\NBSSupplier;
-use App\Suppliers\WoopWoopSupplier;
+class Ape implements Animal {}
 
-$shop = new Shop();
-$shop->addSupplier(new AmazingGardenSupplier);
-$shop->addSupplier(new CoolGardenSupplier);
-$shop->addSupplier(new WoopWoopSupplier);
-$shop->addSupplier(new HeheSupplier);
+$ape = new Ape;
 
-$age = 21;
-
-if ($age >= 18)
+if ($ape instanceof Animal)
 {
-    $shop->addSupplier(new NBSSupplier);
-}
-
-foreach ($shop->products()->all() as ['product' => $product, 'amount' => $amount])
-{
-    echo $product->sellable()->name() . ' ' . $product->price() . ' ( ' . $amount . ' )' . PHP_EOL;
+    echo 'HELLO?';
 }
 

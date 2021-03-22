@@ -1,0 +1,19 @@
+{
+    "name": "kem4/example-tests",
+    "description": "codelex",
+    "authors": [
+        {
+            "name": "Jānis Gitendorfs",
+            "email": "janis.gitendorfs@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
